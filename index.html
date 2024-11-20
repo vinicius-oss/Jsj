@@ -17,8 +17,17 @@
             "https://i.imgur.com/Imk52OE.jpeg"
         ];
 
-        const randomImage = images[Math.floor(Math.random() * images.length)];
-        document.getElementById("randomImage").src = randomImage;
+        // Função para carregar uma imagem aleatória
+        function loadRandomImage() {
+            const randomImage = images[Math.floor(Math.random() * images.length)];
+            document.getElementById("randomImage").src = randomImage;
+        }
+
+        // Carregar uma imagem aleatória ao carregar a página
+        loadRandomImage();
+
+        // Recarregar a página a cada 5 segundos e trocar a imagem
+        setInterval(loadRandomImage, 2000);  // Troca a imagem a cada 5 segundos
     </script>
 </body>
 </html>
