@@ -6,19 +6,32 @@
     <title>Imagem Aleatória</title>
 </head>
 <body>
-    <img id="randomImage" src="" alt="Imagem Aleatória">
 
+    <div id="image-container">
+        <img id="random-image" src="" alt="Imagem aleatória" style="max-width: 100%; height: auto;">
+    </div>
     <script>
-        const images = [
-            'https://i.imgur.com/zZodiIK.jpeg',
-            'https://i.imgur.com/liagVnY.jpeg',
-            'https://i.imgur.com/357Buna.jpeg',
-            'https://i.imgur.com/rPqKZQ2.jpeg',
-            'https://i.imgur.com/Imk52OE.jpeg'
-        ];
+        // Função para escolher e exibir uma imagem aleatória
+        function setRandomImage() {
+            // Lista de links de imagens
+            const images = [
+                'https://i.imgur.com/zZodiIK.jpeg',
+                'https://i.imgur.com/Imk52OE.jpeg',
+                'https://i.imgur.com/liagVnY.jpeg',
+                'https://i.imgur.com/rPqKZQ2.jpeg'
+            ];
 
-        const randomIndex = Math.floor(Math.random() * images.length);
-        document.getElementById('randomImage').src = images[randomIndex];
+            // Gera um índice aleatório para escolher uma imagem da lista
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const randomImage = images[randomIndex];
+
+            // Define a imagem aleatória no HTML
+            const imageContainer = document.getElementById('random-image');
+            imageContainer.src = randomImage;
+        }
+
+        // Chama a função para definir a imagem ao carregar o site
+        window.onload = setRandomImage;
     </script>
 </body>
 </html>
