@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +7,18 @@
 </head>
 <body>
     <img id="randomImage" src="" alt="Imagem Aleatória">
+
     <script>
         const images = [
-            "https://i.imgur.com/zZodiIK.jpeg",
-            "https://i.imgur.com/liagVnY.jpeg",
-            "https://i.imgur.com/357Buna.jpeg",
-            "https://i.imgur.com/BWi0aWe.jpeg",
-            "https://i.imgur.com/rPqKZQ2.jpeg",
-            "https://i.imgur.com/Imk52OE.jpeg"
+            'https://i.imgur.com/zZodiIK.jpeg',
+            'https://i.imgur.com/liagVnY.jpeg',
+            'https://i.imgur.com/357Buna.jpeg',
+            'https://i.imgur.com/rPqKZQ2.jpeg',
+            'https://i.imgur.com/Imk52OE.jpeg'
         ];
 
-        // Função para carregar uma imagem aleatória
-        function loadRandomImage() {
-            const randomImage = images[Math.floor(Math.random() * images.length)];
-            document.getElementById("randomImage").src = randomImage;
-        }
-
-        // Carregar uma imagem aleatória ao carregar a página
-        loadRandomImage();
-
-        // Recarregar a página a cada 1 segundo e trocar a imagem
-        setTimeout(function() {
-            location.reload(); // Recarrega a página após 1 segundo
-        }, 1000); // 1000 milissegundos = 1 segundo
-
-        // Atualizar a imagem a cada vez que a página for recarregada
-        window.onload = function() {
-            loadRandomImage();
-        };
+        const randomIndex = Math.floor(Math.random() * images.length);
+        document.getElementById('randomImage').src = images[randomIndex];
     </script>
 </body>
 </html>
