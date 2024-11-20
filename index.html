@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem Aleatória</title>
+</head>
+<body>
+    <img id="randomImage" src="" alt="Imagem Aleatória">
+    <script>
+        const images = [
+            "https://i.imgur.com/zZodiIK.jpeg",
+            "https://i.imgur.com/liagVnY.jpeg",
+            "https://i.imgur.com/357Buna.jpeg",
+            "https://i.imgur.com/BWi0aWe.jpeg",
+            "https://i.imgur.com/rPqKZQ2.jpeg",
+            "https://i.imgur.com/Imk52OE.jpeg"
+        ];
+
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        document.getElementById("randomImage").src = randomImage;
+    </script>
+</body>
+</html>
